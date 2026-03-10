@@ -15,8 +15,8 @@ const Loading = ({ percent }: { percent: number }) => {
       setLoaded(true);
       setTimeout(() => {
         setIsLoaded(true);
-      }, 100);
-    }, 60);
+      }, 1000);
+    }, 600);
   }
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Loading = ({ percent }: { percent: number }) => {
             module.initialFX();
           }
           setIsLoading(false);
-        }, 90);
+        }, 900);
       }
     });
   }, [isLoaded]);
@@ -108,9 +108,9 @@ export const setProgress = (setLoading: (value: number) => void) => {
         if (percent > 91) {
           clearInterval(interval);
         }
-      }, 200);
+      }, 2000);
     }
-  }, 10);
+  }, 100);
 
   function clear() {
     clearInterval(interval);
@@ -128,7 +128,7 @@ export const setProgress = (setLoading: (value: number) => void) => {
           resolve(percent);
           clearInterval(interval);
         }
-      }, 2);
+      }, 20);
     });
   }
   return { loaded, percent, clear };
